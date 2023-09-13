@@ -1,0 +1,100 @@
+{
+    "user1": {
+        "BINANCE": {
+            "ETH": {
+                "orders": [
+                    {
+                        "entry": 1434,
+                        "volume": 2.4,
+                        "side": "BUY"
+                    },
+                    {
+                        "entry": 1531,
+                        "volume": 2.4,
+                        "side": "SELL"
+                    },
+                    {
+                        "entry": 1518,
+                        "volume": 2.4,
+                        "side": "BUY"
+                    },
+                    {
+                        "entry": 1581,
+                        "volume": 2.4,
+                        "side": "SELL"
+                    }
+                ]
+            },
+            "BTC": {
+                "orders": [
+                    {
+                        "entry": 24900,
+                        "volume": 0.98,
+                        "side": "BUY"
+                    },
+                    {
+                        "entry": 25810,
+                        "volume": 0.98,
+                        "side": "SELL"
+                    },
+                    {
+                        "entry": 25630,
+                        "volume": 0.98,
+                        "side": "BUY"
+                    },
+                    {
+                        "entry": 25915,
+                        "volume": 0.98,
+                        "side": "SELL"
+                    },
+                    {
+                        "entry": 26000,
+                        "volume": 0.98,
+                        "side": "BUY"
+                    }
+                ]
+            },
+            "MATICUSDT": {
+                "orders": [
+                    {
+                        "entry": 0.494,
+                        "volume": 10000,
+                        "side": "BUY"
+                    },
+                    {
+                        "entry": 0.499,
+                        "volume": 0.98,
+                        "side": "SELL"
+                    },
+                    {
+                        "entry": 0.501,
+                        "volume": 0.98,
+                        "side": "BUY"
+                    }
+                ]
+            },
+            "ATOMUSDT": {
+                "orders": [
+                    {
+                        "entry": 6.287,
+                        "volume": 1000,
+                        "side": "BUY"
+                    },
+                    {
+                        "entry": 6.451,
+                        "volume": 1000,
+                        "side": "SELL"
+                    },
+                    {
+                        "entry": 6.359,
+                        "volume": 0.98,
+                        "side": "BUY"
+                    }
+                ]
+            },
+            "DOTUSDT>ATOMUSDT": {
+                "orders": []
+            }
+        }
+    }
+}

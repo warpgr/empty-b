@@ -1,0 +1,102 @@
+{
+    "user1": {
+        "BINANCE": {
+            "BTCUSDT": {
+                "status": "IN_STAGE_OF_ESTIMATION",
+                "configurations": {
+                    "algorithms": ["algorithm1", "algorithm2", "algorithm3"]
+                }
+            },
+            "ETHUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm2", "algorithm3"]
+                }
+            },
+            "MATICUSDT": {
+                "status": "IN_STAGE_OF_TRADING",
+                "configurations": {
+                    "algorithms": ["algorithm3", "algorithm5"]
+                }
+            },
+            "ATOMUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm2", "algorithm3"]
+                }
+            },
+            "DOTUSDT>ATOMUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm3", "algorithm8"]
+                }
+            }
+        },
+        "BINANCE_TEST": {
+            "BTCUSDT": {
+                "status": "IN_STAGE_OF_ESTIMATION",
+                "configurations": {
+                    "algorithms": ["algorithm1", "algorithm2", "algorithm3"]
+                }
+            },
+            "ETHUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm2", "algorithm3"]
+                }
+            },
+            "MATICUSDT": {
+                "status": "IN_STAGE_OF_TRADING",
+                "configurations": {
+                    "algorithms": ["algorithm3", "algorithm5"]
+                }
+            },
+            "ATOMUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm2", "algorithm3"]
+                }
+            },
+            "DOTUSDT>ATOMUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm3", "algorithm8"]
+                }
+            }
+        }
+    },
+    "user2": {
+        "UNISWAP": {
+            "BTCUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm12", "algorithm3", "algorithm8"]
+                }
+            },
+            "ETHUSDT": {
+                "status": "IN_STAGE_OF_TRADING",
+                "configurations": {
+                    "algorithms": ["algorithm2", "algorithm3"]
+                }
+            },
+            "MATICUSDT": {
+                "status": "IN_STAGE_OF_TRADING",
+                "configurations": {
+                    "algorithms": ["algorithm5", "algorithm8"]
+                }
+            },
+            "ATOMUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm2", "algorithm3"]
+                }
+            },
+            "DOTUSDT>ATOMUSDT": {
+                "status": "IN_STAGE_OF_PLACED_ORDER_TRACKING",
+                "configurations": {
+                    "algorithms": ["algorithm3", "algorithm8"]
+                }
+            }
+        }
+    }
+}
