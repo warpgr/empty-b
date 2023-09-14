@@ -13,8 +13,8 @@ var configCounter int = 1
 
 // var configDB
 var configsDB map[string]interface{}
-var statisticsDB map[string]*map[ExchangeName]map[string]PairStatistic
-var processingDB map[string]*map[ExchangeName]map[string]PairProcessingStatus
+var statisticsDB map[string]map[ExchangeName]map[string]PairStatistic
+var processingDB map[string]map[ExchangeName]map[string]PairProcessingStatus
 
 func handlePing(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
@@ -31,9 +31,10 @@ func getProcessing(c *gin.Context) {
 		return
 	}
 
-	var userData *map[ExchangeName]map[string]PairProcessingStatus
-	if userData, ok := processingDB[userName]; !ok || userData == nil {
-		msg := fmt.Sprintf("User %s not found.")
+	var userData map[ExchangeName]map[string]PairProcessingStatus
+	var ok bool
+	if userData, ok = processingDB[userName]; !ok || userData == nil {
+		msg := fmt.Sprintf("User %s not found.", userName)
 		c.JSON(http.StatusNotFound, gin.H{
 			"message": msg,
 		})
@@ -52,11 +53,11 @@ func getProcessing(c *gin.Context) {
 	}
 
 	if !pairNameExists && !exchangeNameExists {
-		c.JSON(http.StatusOK, *userData)
+		c.JSON(http.StatusOK, userData)
 		return
 	} else if !exchangeNameExists && pairNameExists {
 		var pairStatuses []PairProcessingStatus
-		for _, exchangeStatuses := range *userData {
+		for _, exchangeStatuses := range userData {
 			if pairStatus, ok := exchangeStatuses[pairName]; ok {
 				pairStatuses = append(pairStatuses, pairStatus)
 			}
@@ -65,7 +66,7 @@ func getProcessing(c *gin.Context) {
 		return
 	} else if exchangeNameExists && !pairNameExists {
 		exchange := ExchangeName(exchangeName)
-		if exchangeStatuses, ok := (*userData)[exchange]; ok {
+		if exchangeStatuses, ok := userData[exchange]; ok {
 			c.JSON(http.StatusOK, exchangeStatuses)
 			return
 		}
@@ -76,7 +77,7 @@ func getProcessing(c *gin.Context) {
 		fmt.Print(msg)
 		return
 	} else {
-		pairStatus, ok := (*userData)[ExchangeName(exchangeName)][pairName]
+		pairStatus, ok := userData[ExchangeName(exchangeName)][pairName]
 		if !ok {
 			msg := fmt.Sprintf("Data with %s pair on %s exchange not found.", exchangeName, pairName)
 			c.JSON(http.StatusNotFound, gin.H{
@@ -125,7 +126,7 @@ func getStatistics(c *gin.Context) {
 	}
 
 	if exchangeParamExists {
-		exchangeOrders, ok := (*userStatistics)[exchangeName]
+		exchangeOrders, ok := userStatistics[exchangeName]
 		if !ok {
 			msg := fmt.Sprintf("Statistics on %s exchange not found.", exchangeName)
 			c.JSON(http.StatusNotFound, gin.H{
@@ -150,7 +151,7 @@ func getStatistics(c *gin.Context) {
 		}
 	} else if pairParamExists {
 		var pairOrders []PairStatistic
-		for _, exchangeStatistic := range *userStatistics {
+		for _, exchangeStatistic := range userStatistics {
 			if pairOrder, ok := exchangeStatistic[pair]; ok {
 				pairOrders = append(pairOrders, pairOrder)
 			}
